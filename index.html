@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude AI Vibe Coding – školenie bez programovania</title>
+<meta name="description" content="2-dňové školenie Claude AI Vibe Coding: vytvorte si vlastný web a automatizáciu bez znalosti programovania. Termíny v Prahe a Brne, aj online.">
+<meta property="og:title" content="Claude AI Vibe Coding – tvorba appiek bez programovania">
+<meta property="og:description" content="Naučte sa popísať, čo chcete, a nechajte AI to vytvoriť. Vlastný web, automatizácia, publikácia na GitHub Pages – bez kódovania.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #faf6f0;
+    --bg-alt: #f2ead9;
+    --surface: #ffffff;
+    --ink: #241c16;
+    --ink-soft: #5a4f45;
+    --border: #e7dcc9;
+    --brand: #c9603a;
+    --brand-dark: #a94c2c;
+    --brand-ink: #ffffff;
+    --accent: #2f6a5c;
+    --accent-soft: #e4efe9;
+    --shadow: 0 20px 45px -25px rgba(60, 35, 15, 0.35);
+    --radius: 18px;
+    --maxw: 1120px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #1b1611;
+      --bg-alt: #221b15;
+      --surface: #26201a;
+      --ink: #f4ece1;
+      --ink-soft: #cabcaa;
+      --border: #3a3025;
+      --brand: #e07a52;
+      --brand-dark: #f1936c;
+      --brand-ink: #1b1611;
+      --accent: #7fb7a4;
+      --accent-soft: #23332d;
+      --shadow: 0 20px 45px -25px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #1b1611;
+    --bg-alt: #221b15;
+    --surface: #26201a;
+    --ink: #f4ece1;
+    --ink-soft: #cabcaa;
+    --border: #3a3025;
+    --brand: #e07a52;
+    --brand-dark: #f1936c;
+    --brand-ink: #1b1611;
+    --accent: #7fb7a4;
+    --accent-soft: #23332d;
+    --shadow: 0 20px 45px -25px rgba(0,0,0,0.6);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5em;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 1em;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  img{max-width:100%; display:block;}
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px; max-width:var(--maxw); margin:0 auto;
+  }
+  .brandmark{display:flex; align-items:center; gap:10px; font-weight:700; font-size:1.05rem;}
+  .brandmark .dot{width:12px;height:12px;border-radius:50%;background:var(--brand);}
+  .topbar .cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--brand); color:var(--brand-ink);
+    padding:10px 18px; border-radius:999px; font-weight:600; font-size:.92rem;
+    text-decoration:none; white-space:nowrap;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .topbar .cta:hover{background:var(--brand-dark); transform:translateY(-1px);}
+
+  /* Hero */
+  .hero{
+    padding:72px 0 56px;
+    background:
+      radial-gradient(1100px 480px at 85% -10%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 60%),
+      var(--bg-alt);
+    border-bottom:1px solid var(--border);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--accent-soft); color:var(--accent);
+    font-weight:600; font-size:.8rem; letter-spacing:.03em; text-transform:uppercase;
+    padding:7px 14px; border-radius:999px; margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(2.1rem, 4vw, 3.1rem); max-width:16ch;}
+  .hero .lede{font-size:1.15rem; color:var(--ink-soft); max-width:52ch;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:28px;}
+  .btn-primary{
+    background:var(--brand); color:var(--brand-ink);
+    padding:15px 26px; border-radius:12px; font-weight:700; font-size:1.02rem;
+    text-decoration:none; box-shadow:var(--shadow);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary:hover{background:var(--brand-dark); transform:translateY(-2px);}
+  .btn-secondary{
+    background:transparent; color:var(--ink); border:1.5px solid var(--border);
+    padding:14px 24px; border-radius:12px; font-weight:600; font-size:1.02rem;
+    text-decoration:none; transition:border-color .15s ease, background .15s ease;
+  }
+  .btn-secondary:hover{border-color:var(--brand); background:var(--surface);}
+  .hero-meta{
+    display:flex; gap:22px; flex-wrap:wrap; margin-top:30px;
+    font-size:.88rem; color:var(--ink-soft);
+  }
+  .hero-meta span{display:flex; align-items:center; gap:7px;}
+  .hero-meta b{color:var(--ink); font-weight:700;}
+
+  .hero-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:28px; box-shadow:var(--shadow);
+  }
+  .hero-card h3{font-size:1.1rem; margin-bottom:16px;}
+  .hero-card ul{list-style:none; margin:0; padding:0; display:grid; gap:12px;}
+  .hero-card li{display:flex; gap:10px; align-items:flex-start; font-size:.96rem;}
+  .check{
+    flex:none; width:20px; height:20px; border-radius:50%;
+    background:var(--accent-soft); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:800;
+    margin-top:1px;
+  }
+
+  section{padding:64px 0;}
+  .section-head{max-width:640px; margin:0 auto 40px; text-align:center;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.6rem, 3vw, 2.1rem);}
+  .section-head p{color:var(--ink-soft); font-size:1.05rem;}
+
+  /* Audience */
+  .audience-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:18px;}
+  .audience-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:22px 18px; font-size:.92rem;
+  }
+  .audience-card .icon{font-size:1.5rem; margin-bottom:10px; display:block;}
+  .audience-card strong{display:block; margin-bottom:6px; font-size:.98rem;}
+
+  /* Curriculum */
+  .curriculum{background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .curr-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;}
+  .curr-item{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:22px 24px;
+  }
+  .curr-item h3{font-size:1.02rem; display:flex; gap:10px; align-items:center; margin-bottom:10px;}
+  .curr-item .num{
+    flex:none; width:28px; height:28px; border-radius:8px; background:var(--brand); color:var(--brand-ink);
+    display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:800;
+  }
+  .curr-item ul{margin:0; padding-left:38px; color:var(--ink-soft); font-size:.9rem; display:grid; gap:5px;}
+
+  /* Outcomes */
+  .outcomes-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;}
+  .outcome{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px;
+  }
+  .outcome .icon{
+    width:44px; height:44px; border-radius:12px; background:var(--accent-soft); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:14px;
+  }
+  .outcome h3{font-size:1.05rem;}
+  .outcome p{color:var(--ink-soft); font-size:.93rem; margin:0;}
+
+  /* Dates / pricing */
+  .dates{background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .dates-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;}
+  .date-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .date-card .city{font-weight:700; font-size:1.05rem; display:flex; align-items:center; gap:8px;}
+  .date-card .when{font-size:1.35rem; font-family:'Fraunces',serif; font-weight:600;}
+  .date-card .price{color:var(--brand); font-weight:800; font-size:1.15rem;}
+  .date-card .price small{color:var(--ink-soft); font-weight:500; font-size:.75rem; display:block;}
+  .date-card .btn-primary{text-align:center; margin-top:auto;}
+  .tag-online{
+    align-self:flex-start; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em;
+    background:var(--accent-soft); color:var(--accent); padding:4px 10px; border-radius:999px;
+  }
+
+  /* FAQ */
+  .faq{display:grid; gap:12px; max-width:820px; margin:0 auto;}
+  .faq details{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:18px 22px;
+  }
+  .faq summary{
+    cursor:pointer; font-weight:700; font-size:1rem; list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+"; font-size:1.4rem; color:var(--brand); flex:none;}
+  .faq details[open] summary::after{content:"–";}
+  .faq p{color:var(--ink-soft); margin:14px 0 0; font-size:.95rem;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg, var(--brand), var(--brand-dark));
+    color:#fff; border-radius:24px; padding:52px 40px; text-align:center;
+    margin:0 24px;
+  }
+  .final-cta h2{color:#fff; font-size:clamp(1.6rem, 3vw, 2.3rem);}
+  .final-cta p{color:rgba(255,255,255,.9); max-width:56ch; margin:0 auto 26px; font-size:1.05rem;}
+  .final-cta .btn-primary{background:#fff; color:var(--brand-dark); box-shadow:none;}
+  .final-cta .btn-primary:hover{background:#f4ece1;}
+
+  footer{padding:36px 0 28px; font-size:.85rem; color:var(--ink-soft); text-align:center;}
+  footer a{color:var(--ink-soft); text-decoration:underline;}
+
+  /* Sticky mobile CTA for ad-traffic conversion */
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--surface); border-top:1px solid var(--border);
+    padding:12px 16px; display:none;
+    box-shadow:0 -10px 30px -20px rgba(0,0,0,.3);
+  }
+  .sticky-cta a{
+    display:block; text-align:center; background:var(--brand); color:var(--brand-ink);
+    padding:14px; border-radius:12px; font-weight:700; text-decoration:none;
+  }
+
+  @media (max-width: 880px){
+    .hero-grid{grid-template-columns:1fr;}
+    .audience-grid{grid-template-columns:repeat(2,1fr);}
+    .curr-grid{grid-template-columns:1fr;}
+    .outcomes-grid{grid-template-columns:1fr;}
+    .dates-grid{grid-template-columns:1fr;}
+    .topbar .cta{display:none;}
+    .sticky-cta{display:block;}
+    body{padding-bottom:78px;}
+    .final-cta{padding:40px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brandmark"><span class="dot"></span> Claude AI Vibe Coding</div>
+    <a class="cta" href="#terminy">Prihlásiť sa na kurz</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Kurz pre úplných začiatočníkov</span>
+      <h1>Vytvorte si vlastný web a appku pomocou AI — bez jediného riadku kódu</h1>
+      <p class="lede">2-dňové praktické školenie <strong>Claude AI – vibe coding</strong>. Popíšete, čo chcete, a AI to vytvorí. Odnesiete si publikovaný web, funkčnú aplikáciu aj automatizačný skript.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">Zobraziť termíny a prihlásiť sa</a>
+        <a class="btn-secondary" href="#naplna">Čo sa naučím</a>
+      </div>
+      <div class="hero-meta">
+        <span>🗓️ <b>2 dni</b>, 9:00–17:00</span>
+        <span>💻 Prezenčne v Brne / Prahe alebo online</span>
+        <span>🎓 Bez programátorských znalostí</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Čo si z kurzu reálne odnesiete</h3>
+      <ul>
+        <li><span class="check">✓</span> Vlastnú webovú stránku publikovanú zadarmo na GitHub Pages</li>
+        <li><span class="check">✓</span> Interaktívnu aplikáciu (kalkulačka, formulár alebo kvíz) s ukladaním dát</li>
+        <li><span class="check">✓</span> Automatizačný skript pre opakujúce sa úlohy (GitHub Actions)</li>
+        <li><span class="check">✓</span> Sadu overených promptov, ktoré fungujú</li>
+        <li><span class="check">✓</span> Certifikát ICT Pro o absolvovaní</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section id="pre-koho">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pre koho je kurz určený</span>
+      <h2>Nemusíte byť programátor</h2>
+      <p>Kurz je postavený na dialógu s AI — stačí vedieť pracovať s počítačom a internetom.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card"><span class="icon">📊</span><strong>Analytici a dátoví pracovníci</strong>Validácia kódu a tvorba vizualizácií.</div>
+      <div class="audience-card"><span class="icon">📣</span><strong>Marketéri</strong>Rýchla tvorba landing pages a formulárov.</div>
+      <div class="audience-card"><span class="icon">🗂️</span><strong>Projektoví manažéri</strong>Dokumentácia a diagramy na pár klikov.</div>
+      <div class="audience-card"><span class="icon">🧾</span><strong>HR a administratíva</strong>Šablóny a jednoduché interné nástroje.</div>
+    </div>
+  </div>
+</section>
+
+<section id="prinosy" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Čo vám kurz prinesie</span>
+      <h2>Od nápadu k publikovanému výsledku</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome"><div class="icon">🧠</div><h3>Pochopíte možnosti a limity AI</h3><p>Halucinácie, zastarané dáta, výber správneho modelu pre danú úlohu.</p></div>
+      <div class="outcome"><div class="icon">⚙️</div><h3>Nastavíte si Claude na mieru</h3><p>Memory, Projects, Skills, Styles aj prepojenie Google Disku a Gmailu.</p></div>
+      <div class="outcome"><div class="icon">🌐</div><h3>Publikujete web zadarmo</h3><p>GitHub Pages, verzovanie, vlastná doména — krok za krokom.</p></div>
+      <div class="outcome"><div class="icon">🤖</div><h3>Automatizujete rutinu</h3><p>Opakujúce sa úlohy zvládne GitHub Actions namiesto vás.</p></div>
+      <div class="outcome"><div class="icon">✍️</div><h3>Naučíte sa efektívne promptovanie</h3><p>Anatómia dobrého promptu, plán pred kódom, iteratívne zjemňovanie.</p></div>
+      <div class="outcome"><div class="icon">🛡️</div><h3>Zorientujete sa v etike a bezpečnosti</h3><p>Kedy AI použiť, kedy nie, a ako pracovať s citlivými dátami.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="naplna" class="curriculum">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Náplň kurzu</span>
+      <h2>Dva dni, sedem tematických blokov</h2>
+    </div>
+    <div class="curr-grid">
+      <div class="curr-item"><h3><span class="num">1</span>Úvod do AI a Claude</h3><ul><li>Ako funguje generatívna AI</li><li>Čo je vibe coding a čím sa líši od klasického programovania</li><li>Limity AI: halucinácie, zastarané informácie, citlivé dáta</li></ul></div>
+      <div class="curr-item"><h3><span class="num">2</span>Efektívne promptovanie</h3><ul><li>Anatómia dobrého promptu: kontext, cieľ, obmedzenia, formát</li><li>Najprv plán, potom kód</li><li>Iteratívne zjemňovanie po malých krokoch</li></ul></div>
+      <div class="curr-item"><h3><span class="num">3</span>Personalizácia Claude</h3><ul><li>Memory, Projects, Skills, Styles</li><li>Prepojenie Google Disku a Gmailu bez programovania</li></ul></div>
+      <div class="curr-item"><h3><span class="num">4</span>GitHub a verzovanie</h3><ul><li>Repo, commit, branch — základné pojmy</li><li>GitHub Pages — publikácia webu zadarmo</li></ul></div>
+      <div class="curr-item"><h3><span class="num">5</span>Praktický projekt: vlastný web</h3><ul><li>Tvorba portfólio stránky alebo vizitky</li><li>Publikácia na GitHub Pages, napojenie vlastnej domény</li></ul></div>
+      <div class="curr-item"><h3><span class="num">6</span>Interaktívne aplikácie</h3><ul><li>Kalkulačka, formulár alebo kvíz</li><li>Trvalé ukladanie dát a AI priamo v aplikácii</li></ul></div>
+      <div class="curr-item"><h3><span class="num">7</span>Sub-agenti</h3><ul><li>Delegovanie práce a kontextové okno</li><li>Vlastný špecialista, napr. kontrolór textov</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="terminy" class="dates">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Termíny a cena</span>
+      <h2>Vyberte si mesto alebo choďte online</h2>
+      <p>Formu (prezenčne / online) volíte pri objednávke.</p>
+    </div>
+    <div class="dates-grid">
+      <div class="date-card">
+        <span class="tag-online">+ online voliteľne</span>
+        <div class="city">📍 Praha</div>
+        <div class="when">26.–27. 10. 2026</div>
+        <div class="price">9 800 Kč <small>11 858 Kč vrátane 21 % DPH</small></div>
+        <a class="btn-primary" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">Prihlásiť sa</a>
+      </div>
+      <div class="date-card">
+        <span class="tag-online">+ online voliteľne</span>
+        <div class="city">📍 Brno</div>
+        <div class="when">23.–24. 11. 2026</div>
+        <div class="price">9 800 Kč <small>11 858 Kč vrátane 21 % DPH</small></div>
+        <a class="btn-primary" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">Prihlásiť sa</a>
+      </div>
+      <div class="date-card">
+        <span class="tag-online">+ online voliteľne</span>
+        <div class="city">📍 Praha</div>
+        <div class="when">7.–8. 12. 2026</div>
+        <div class="price">9 800 Kč <small>11 858 Kč vrátane 21 % DPH</small></div>
+        <a class="btn-primary" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">Prihlásiť sa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Časté otázky</span>
+      <h2>Skôr než sa prihlásite</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>Naozaj nemusím vedieť programovať?</summary>
+        <p>Nie. Celý kurz je postavený na tom, že popíšete, čo chcete, a výsledok vzniká v dialógu s AI. Žiadne programátorské znalosti nie sú potrebné.</p>
+      </details>
+      <details>
+        <summary>Čo si z kurzu reálne odnesiem?</summary>
+        <p>Konkrétne výstupy: publikovaný web, interaktívny nástroj, automatizačný skript, sadu promptov a certifikát. Nie len poznámky.</p>
+      </details>
+      <details>
+        <summary>Potrebujem vlastný platený účet?</summary>
+        <p>Nie. Na dobu výučby a týždeň po kurze vám organizátor pridelí licenciu. Ak si účet založíte vopred, ušetríte čas na začiatku.</p>
+      </details>
+      <details>
+        <summary>Som vývojár a chcem ísť hlbšie. Existuje nadväzujúci kurz?</summary>
+        <p>Áno — Claude Code: autonómny agentný vývoj a MCP integrácie (CLPRG1), kde sa preberá CLI, CLAUDE.md, hooks, skills a MCP.</p>
+      </details>
+      <details>
+        <summary>Potrebujem si priniesť vlastný počítač?</summary>
+        <p>Nie, učebne sú kompletne vybavené výkonnými počítačmi. Pri online forme stačí váš vlastný počítač s internetom.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="final-cta">
+    <h2>Naučte sa tvoriť s AI namiesto toho, aby ste sa naučili programovať</h2>
+    <p>Dvojdňové školenie s konkrétnymi výstupmi — vlastný web, appka aj automatizácia. Miesta na najbližšie termíny sa plnia priebežne.</p>
+    <a class="btn-primary" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">Zobraziť termíny a prihlásiť sa →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Školenie organizuje ICT Pro s.r.o. · Brno &amp; Praha · <a href="mailto:skoleni@ictpro.cz">skoleni@ictpro.cz</a> · +420 517 546 191<br>
+    Táto stránka je neoficiálna propagačná landing page kurzu, vytvorená na základe verejne dostupných informácií z
+    <a href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">oficiálnej stránky kurzu ICT Pro</a>.
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener">Prihlásiť sa na kurz</a>
+</div>
+
+</body>
+</html>
