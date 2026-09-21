@@ -2,7 +2,11 @@
 
 Jednostránkový propagačný landing page pre kurz [Claude AI – vibe coding a tvorba aplikací bez programování (CLVC)](https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx) od ICT Pro. Určené na použitie ako cieľová stránka pre reklamné kampane (Google Ads, Meta Ads a pod.).
 
-Obsahuje len jeden súbor `index.html` (bez závislostí okrem Google Fonts) — je pripravený na priame nasadenie cez GitHub Pages.
+Obsahuje dva hotové súbory (bez závislostí okrem Google Fonts) — pripravené na priame nasadenie cez GitHub Pages:
+- `index.html` — svetlá terakotovo-krémová verzia
+- `index-dark.html` — tmavá (čierna) verzia rovnakého dizajnu
+
+Publikuje sa vždy len jeden z nich ako `index.html`. Ak chceš nasadiť tmavú verziu, buď premenuj `index-dark.html` na `index.html` pred pushom, alebo commitni oba súbory a nastav GitHub Pages presmerovanie/odkaz na `index-dark.html`.
 
 ## Publikácia na GitHub Pages
 
