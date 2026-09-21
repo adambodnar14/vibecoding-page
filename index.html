@@ -144,7 +144,7 @@
   .hero-meta b{color:var(--ink); font-weight:700;}
 
   .hero-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    background:var(--surface); border:2px solid var(--brand); border-radius:var(--radius);
     padding:28px; box-shadow:var(--shadow);
   }
   .hero-card h3{font-size:1.1rem; margin-bottom:16px;}
@@ -158,6 +158,7 @@
   }
 
   section{padding:64px 0;}
+  #prinosy, #naplna, #terminy{padding:96px 0;}
   .section-head{max-width:640px; margin:0 auto 40px; text-align:center;}
   .section-head .eyebrow{margin-bottom:14px;}
   .section-head h2{font-size:clamp(1.6rem, 3vw, 2.1rem);}
@@ -168,8 +169,13 @@
   .audience-card{
     background:var(--surface); border:1px solid var(--border); border-radius:14px;
     padding:22px 18px; font-size:.92rem;
+    transition:transform .15s ease, box-shadow .15s ease;
   }
-  .audience-card .icon{font-size:1.5rem; margin-bottom:10px; display:block;}
+  .audience-card:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
+  .audience-card .icon{
+    width:44px; height:44px; border-radius:12px; background:var(--bg-alt);
+    display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:12px;
+  }
   .audience-card strong{display:block; margin-bottom:6px; font-size:.98rem;}
 
   /* Curriculum */
@@ -183,6 +189,7 @@
   .curr-item .num{
     flex:none; width:28px; height:28px; border-radius:8px; background:var(--brand); color:var(--brand-ink);
     display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:800;
+    box-shadow:0 0 0 4px var(--bg-alt);
   }
   .curr-item ul{margin:0; padding-left:38px; color:var(--ink-soft); font-size:.9rem; display:grid; gap:5px;}
 
@@ -190,7 +197,9 @@
   .outcomes-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;}
   .outcome{
     background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px;
+    transition:border-color .15s ease;
   }
+  .outcome:hover{border-color:var(--brand);}
   .outcome .icon{
     width:44px; height:44px; border-radius:12px; background:var(--accent-soft); color:var(--accent);
     display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:14px;
@@ -204,7 +213,9 @@
   .date-card{
     background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:26px;
     display:flex; flex-direction:column; gap:14px;
+    transition:border-color .15s ease;
   }
+  .date-card:hover{border-color:var(--brand);}
   .date-card .city{font-weight:700; font-size:1.05rem; display:flex; align-items:center; gap:8px;}
   .date-card .when{font-size:1.35rem; font-family:'Fraunces',serif; font-weight:600;}
   .date-card .price{color:var(--brand); font-weight:800; font-size:1.15rem;}
