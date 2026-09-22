@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="sk"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude AI Vibe Coding – školenie bez programovania</title>
+  <meta name="description" content="2-dňové školenie Claude AI Vibe Coding: vytvorte si vlastný web a automatizáciu bez znalosti programovania. Termíny v Prahe a Brne, aj online.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf6f0;
+      --bg-alt: #f2ead9;
+      --surface: #ffffff;
+      --ink: #241c16;
+      --ink-soft: #5a4f45;
+      --border: #e7dcc9;
+      --brand: #c9603a;
+      --brand-dark: #a94c2c;
+      --brand-ink: #ffffff;
+      --accent: #2f6a5c;
+      --accent-soft: #e4efe9;
+      --shadow: 0 20px 45px -25px rgba(60, 35, 15, 0.35);
+      --radius: 18px;
+      --maxw: 1120px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1611;
+        --bg-alt: #221b15;
+        --surface: #26201a;
+        --ink: #f4ece1;
+        --ink-soft: #cabcaa;
+        --border: #3a3025;
+        --brand: #e07a52;
+        --brand-dark: #f1936c;
+        --brand-ink: #1b1611;
+        --accent: #7fb7a4;
+        --accent-soft: #23332d;
+        --shadow: 0 20px 45px -25px rgba(0,0,0,0.6);
+      }
+    }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 999px;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: var(--brand-ink);
+      padding: 15px 26px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.02rem;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--border);
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      text-decoration: none;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .btn-secondary:hover {
+      border-color: var(--brand);
+      background: var(--surface);
+    }
+    .check-icon {
+      flex: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen" data-sd-id="1">
+    <header class="topbar sticky top-0 z-50 border-b" style="background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-color: var(--border);" data-sd-id="2">
+      <div class="max-w-[1120px] mx-auto px-6 py-[14px] flex items-center justify-between" data-sd-id="3">
+        <div class="brandmark flex items-center gap-[10px] font-bold text-[1.05rem]" data-sd-id="4">
+          <span class="dot w-3 h-3 rounded-full" style="background: var(--brand);" data-sd-id="5"></span>
+          Claude AI Vibe Coding
+        </div>
+        <a id="nav-cta" class="hidden md:inline-flex items-center gap-2 px-[18px] py-[10px] rounded-full text-[0.92rem] font-semibold transition-all hover:-translate-y-[1px]" style="background: var(--brand); color: var(--brand-ink);" href="#terminy" data-sd-id="6">Prihlásiť sa na kurz</a>
+      </div>
+    </header>
+
+    <main data-sd-id="7">
+      <section class="hero border-b py-[88px] md:pb-[88px]" style="background: radial-gradient(1100px 480px at 85% -10%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 60%), var(--bg-alt); border-color: var(--border);" data-sd-id="8">
+        <div class="max-w-[1120px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-start" data-sd-id="9">
+          <div class="hero-content" data-sd-id="10">
+            <span class="eyebrow mb-5" data-sd-id="11">Kurz pre úplných začiatočníkov</span>
+            <h1 class="text-[clamp(2.1rem,4vw,3.1rem)] max-w-[16ch] mb-4" data-sd-id="12">Vytvorte si vlastný web a appku pomocou AI — bez jediného riadku kódu</h1>
+            <p class="text-[1.15rem] mb-7 max-w-[52ch]" style="color: var(--ink-soft);" data-sd-id="13">2-dňové praktické školenie <strong>Claude AI – vibe coding</strong>. Popíšete, čo chcete, a AI to vytvorí. Odnesiete si publikovaný web, funkčnú aplikáciu aj automatizačný skript.</p>
+            <div class="flex flex-wrap gap-[14px] mt-7" data-sd-id="14">
+              <a id="hero-primary" class="btn-primary" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" data-sd-id="15">Zobraziť termíny a prihlásiť sa</a>
+              <a id="hero-secondary" class="btn-secondary" href="#naplna" data-sd-id="16">Čo sa naučím</a>
+            </div>
+            <div class="hero-meta flex flex-wrap gap-[22px] mt-[30px] text-[0.88rem]" style="color: var(--ink-soft);" data-sd-id="17">
+              <span class="flex items-center gap-[7px]" data-sd-id="18">🗓️ <b class="font-bold" style="color: var(--ink);">2 dni</b>, 9:00–17:00</span>
+              <span class="flex items-center gap-[7px]" data-sd-id="19">💻 Prezenčne v Brne / Prahe alebo online</span>
+              <span class="flex items-center gap-[7px]" data-sd-id="20">🎓 Bez programátorských znalostí</span>
+            </div>
+          </div>
+          <div class="hero-card p-8 border-2 rounded-[var(--radius)] shadow-[var(--shadow)] sticky top-32" style="background: var(--surface); border-color: var(--brand);" data-sd-id="21">
+            <h3 class="text-[1.1rem] mb-4" data-sd-id="22">Čo si z kurzu reálne odnesiete</h3>
+            <ul class="grid gap-3" data-sd-id="23">
+              <li class="flex gap-[10px] items-start text-[0.96rem]" data-sd-id="24"><span class="check-icon mt-1" data-sd-id="25">✓</span> Vlastnú webovú stránku publikovanú zadarmo na GitHub Pages</li>
+              <li class="flex gap-[10px] items-start text-[0.96rem]" data-sd-id="26"><span class="check-icon mt-1" data-sd-id="27">✓</span> Interaktívnu aplikáciu (kalkulačka, formulár alebo kvíz) s ukladaním dát</li>
+              <li class="flex gap-[10px] items-start text-[0.96rem]" data-sd-id="28"><span class="check-icon mt-1" data-sd-id="29">✓</span> Automatizačný skript pre opakujúce sa úlohy (GitHub Actions)</li>
+              <li class="flex gap-[10px] items-start text-[0.96rem]" data-sd-id="30"><span class="check-icon mt-1" data-sd-id="31">✓</span> Sadu overených promptov, ktoré fungujú</li>
+              <li class="flex gap-[10px] items-start text-[0.96rem]" data-sd-id="32"><span class="check-icon mt-1" data-sd-id="33">✓</span> Certifikát ICT Pro o absolvovaní</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="pre-koho" class="py-16" data-sd-id="34">
+        <div class="max-w-[1120px] mx-auto px-6" data-sd-id="35">
+          <div class="max-w-[640px] mx-auto mb-10 text-center" data-sd-id="36">
+            <span class="eyebrow mb-[14px]" data-sd-id="37">Pre koho je kurz určený</span>
+            <h2 class="text-[clamp(1.6rem,3vw,2.1rem)] mb-2" data-sd-id="38">Nemusíte byť programátor</h2>
+            <p class="text-[1.05rem]" style="color: var(--ink-soft);" data-sd-id="39">Kurz je postavený na dialógu s AI — stačí vedieť pracovať s počítačom a internetom.</p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-[18px]" data-sd-id="40">
+            <div class="audience-card p-[28px_22px] border rounded-[16px] transition-all hover:shadow-md hover:-translate-y-1" style="background: var(--surface); border-color: var(--border);" data-sd-id="41">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl mb-4 text-[1.5rem]" style="background: var(--bg-alt); text-shadow: 0 0 10px rgba(0,0,0,0.05);" data-sd-id="42">📊</div>
+              <strong class="block mb-[6px] text-[0.98rem]">Analytici a dátoví pracovníci</strong>
+              <span class="text-[0.92rem]" data-sd-id="43">Validácia kódu a tvorba vizualizácií.</span>
+            </div>
+            <div class="audience-card p-[28px_22px] border rounded-[16px] transition-all hover:shadow-md hover:-translate-y-1" style="background: var(--surface); border-color: var(--border);" data-sd-id="44">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl mb-4 text-[1.5rem]" style="background: var(--bg-alt); text-shadow: 0 0 10px rgba(0,0,0,0.05);" data-sd-id="45">📣</div>
+              <strong class="block mb-[6px] text-[0.98rem]">Marketéri</strong>
+              <span class="text-[0.92rem]" data-sd-id="46">Rýchla tvorba landing pages a formulárov.</span>
+            </div>
+            <div class="audience-card p-[28px_22px] border rounded-[16px] transition-all hover:shadow-md hover:-translate-y-1" style="background: var(--surface); border-color: var(--border);" data-sd-id="47">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl mb-4 text-[1.5rem]" style="background: var(--bg-alt); text-shadow: 0 0 10px rgba(0,0,0,0.05);" data-sd-id="48">🗂️</div>
+              <strong class="block mb-[6px] text-[0.98rem]">Projektoví manažéri</strong>
+              <span class="text-[0.92rem]" data-sd-id="49">Dokumentácia a diagramy na pár klikov.</span>
+            </div>
+            <div class="audience-card p-[28px_22px] border rounded-[16px] transition-all hover:shadow-md hover:-translate-y-1" style="background: var(--surface); border-color: var(--border);" data-sd-id="50">
+              <div class="w-12 h-12 flex items-center justify-center rounded-xl mb-4 text-[1.5rem]" style="background: var(--bg-alt); text-shadow: 0 0 10px rgba(0,0,0,0.05);" data-sd-id="51">🧾</div>
+              <strong class="block mb-[6px] text-[0.98rem]">HR a administratíva</strong>
+              <span class="text-[0.92rem]" data-sd-id="52">Šablóny a jednoduché interné nástroje.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prinosy" class="py-24 border-y" style="background: var(--bg-alt); border-color: var(--border);" data-sd-id="53">
+        <div class="max-w-[1120px] mx-auto px-6" data-sd-id="54">
+          <div class="max-w-[640px] mx-auto mb-10 text-center" data-sd-id="55">
+            <span class="eyebrow mb-[14px]" data-sd-id="56">Čo vám kurz prinesie</span>
+            <h2 class="text-[clamp(1.6rem,3vw,2.1rem)] mb-2" data-sd-id="57">Od nápadu k publikovanému výsledku</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5" data-sd-id="58">
+            <div class="p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="59">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl text-[1.4rem] mb-5 shadow-sm" style="background: var(--brand); color: white;" data-sd-id="60"><iconify-icon icon="lucide:brain"></iconify-icon></div>
+              <h3 class="text-[1.05rem] mb-2" data-sd-id="61">Pochopíte možnosti a limity AI</h3>
+              <p class="text-[0.93rem]" style="color: var(--ink-soft);" data-sd-id="62">Halucinácie, zastarané dáta, výber správneho modelu pre danú úlohu.</p>
+            </div>
+            <div class="p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="63">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl text-[1.4rem] mb-5 shadow-sm" style="background: var(--brand); color: white;" data-sd-id="64"><iconify-icon icon="lucide:settings-2"></iconify-icon></div>
+              <h3 class="text-[1.05rem] mb-2" data-sd-id="65">Nastavíte si Claude na mieru</h3>
+              <p class="text-[0.93rem]" style="color: var(--ink-soft);" data-sd-id="66">Memory, Projects, Skills, Styles aj prepojenie Google Disku a Gmailu.</p>
+            </div>
+            <div class="p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="67">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl text-[1.4rem] mb-5 shadow-sm" style="background: var(--brand); color: white;" data-sd-id="68"><iconify-icon icon="lucide:globe"></iconify-icon></div>
+              <h3 class="text-[1.05rem] mb-2" data-sd-id="69">Publikujete web zadarmo</h3>
+              <p class="text-[0.93rem]" style="color: var(--ink-soft);" data-sd-id="70">GitHub Pages, verzovanie, vlastná doména — krok za krokom.</p>
+            </div>
+            <div class="p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="71">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl text-[1.4rem] mb-5 shadow-sm" style="background: var(--brand); color: white;" data-sd-id="72"><iconify-icon icon="lucide:bot"></iconify-icon></div>
+              <h3 class="text-[1.05rem] mb-2" data-sd-id="73">Automatizujete rutinu</h3>
+              <p class="text-[0.93rem]" style="color: var(--ink-soft);" data-sd-id="74">Opakujúce sa úlohy zvládne GitHub Actions namiesto vás.</p>
+            </div>
+            <div class="p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="75">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl text-[1.4rem] mb-5 shadow-sm" style="background: var(--brand); color: white;" data-sd-id="76"><iconify-icon icon="lucide:pen-tool"></iconify-icon></div>
+              <h3 class="text-[1.05rem] mb-2" data-sd-id="77">Naučíte sa efektívne promptovanie</h3>
+              <p class="text-[0.93rem]" style="color: var(--ink-soft);" data-sd-id="78">Anatómia dobrého promptu, plán pred kódom, iteratívne zjemňovanie.</p>
+            </div>
+            <div class="p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="79">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl text-[1.4rem] mb-5 shadow-sm" style="background: var(--brand); color: white;" data-sd-id="80"><iconify-icon icon="lucide:shield-check"></iconify-icon></div>
+              <h3 class="text-[1.05rem] mb-2" data-sd-id="81">Zorientujete sa v etike a bezpečnosti</h3>
+              <p class="text-[0.93rem]" style="color: var(--ink-soft);" data-sd-id="82">Kedy AI použiť, kedy nie, a ako pracovať s citlivými dátami.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="naplna" class="py-24 border-b" style="background: var(--bg-alt); border-color: var(--border);" data-sd-id="83">
+        <div class="max-w-[1120px] mx-auto px-6" data-sd-id="84">
+          <div class="max-w-[640px] mx-auto mb-10 text-center" data-sd-id="85">
+            <span class="eyebrow mb-[14px]" data-sd-id="86">Náplň kurzu</span>
+            <h2 class="text-[clamp(1.6rem,3vw,2.1rem)] mb-2" data-sd-id="87">Dva dni, sedem tematických blokov</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-sd-id="88">
+            <div class="curr-item p-8 border rounded-2xl" style="background: var(--surface); border-color: var(--border);" data-sd-id="89">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="90"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="91">1</span>Úvod do AI a Claude</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="92">
+                <li data-sd-id="93">Ako funguje generatívna AI</li>
+                <li data-sd-id="94">Čo je vibe coding a čím sa líši od klasického programovania</li>
+                <li data-sd-id="95">Limity AI: halucinácie, zastarané informácie, citlivé dáta</li>
+              </ul>
+            </div>
+            <div class="curr-item p-8 border rounded-2xl" style="background: var(--surface); border-color: var(--border);" data-sd-id="96">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="97"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="98">2</span>Efektívne promptovanie</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="99">
+                <li data-sd-id="100">Anatómia dobrého promptu: kontext, cieľ, obmedzenia, formát</li>
+                <li data-sd-id="101">Najprv plán, potom kód</li>
+                <li data-sd-id="102">Iteratívne zjemňovanie po malých krokoch</li>
+              </ul>
+            </div>
+            <div class="curr-item p-8 border rounded-2xl" style="background: var(--surface); border-color: var(--border);" data-sd-id="103">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="104"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="105">3</span>Personalizácia Claude</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="106">
+                <li data-sd-id="107">Memory, Projects, Skills, Styles</li>
+                <li data-sd-id="108">Prepojenie Google Disku a Gmailu bez programovania</li>
+              </ul>
+            </div>
+            <div class="curr-item p-8 border rounded-2xl" style="background: var(--surface); border-color: var(--border);" data-sd-id="109">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="110"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="111">4</span>GitHub a verzovanie</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="112">
+                <li data-sd-id="113">Repo, commit, branch — základné pojmy</li>
+                <li data-sd-id="114">GitHub Pages — publikácia webu zadarmo</li>
+              </ul>
+            </div>
+            <div class="curr-item p-8 border rounded-2xl" style="background: var(--surface); border-color: var(--border);" data-sd-id="115">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="116"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="117">5</span>Praktický projekt: vlastný web</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="118">
+                <li data-sd-id="119">Tvorba portfólio stránky alebo vizitky</li>
+                <li data-sd-id="120">Publikácia na GitHub Pages, napojenie vlastnej domény</li>
+              </ul>
+            </div>
+            <div class="curr-item p-8 border rounded-2xl" style="background: var(--surface); border-color: var(--border);" data-sd-id="121">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="122"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="123">6</span>Interaktívne aplikácie</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="124">
+                <li data-sd-id="125">Kalkulačka, formulár alebo kvíz</li>
+                <li data-sd-id="126">Trvalé ukladanie dát a AI priamo v aplikácii</li>
+              </ul>
+            </div>
+            <div class="curr-item md:col-span-2 p-[22px_24px] border rounded-[14px]" style="background: var(--surface); border-color: var(--border);" data-sd-id="127">
+              <h3 class="text-[1.02rem] flex gap-[10px] items-center mb-[10px]" data-sd-id="128"><span class="flex-none w-9 h-9 rounded-lg flex items-center justify-center text-[1rem] font-extrabold ring-4 ring-[var(--bg-alt)]" style="background: var(--brand); color: var(--brand-ink);" data-sd-id="129">7</span>Sub-agenti</h3>
+              <ul class="pl-[38px] grid gap-[5px] text-[0.9rem] list-disc" style="color: var(--ink-soft);" data-sd-id="130">
+                <li data-sd-id="131">Delegovanie práce a kontextové okno</li>
+                <li data-sd-id="132">Vlastný špecialista, napr. kontrolór textov</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="terminy" class="py-24 border-b" style="background: var(--bg-alt); border-color: var(--border);" data-sd-id="133">
+        <div class="max-w-[1120px] mx-auto px-6" data-sd-id="134">
+          <div class="max-w-[640px] mx-auto mb-10 text-center" data-sd-id="135">
+            <span class="eyebrow mb-[14px]" data-sd-id="136">Termíny a cena</span>
+            <h2 class="text-[clamp(1.6rem,3vw,2.1rem)] mb-2" data-sd-id="137">Vyberte si mesto alebo choďte online</h2>
+            <p class="text-[1.05rem]" style="color: var(--ink-soft);" data-sd-id="138">Formu (prezenčne / online) volíte pri objednávke.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-[18px]" data-sd-id="139">
+            <div class="date-card flex flex-col gap-[14px] p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="140">
+              <span class="self-start text-[0.72rem] font-bold uppercase tracking-wider px-[10px] py-1 rounded-full" style="background: var(--accent-soft); color: var(--accent);" data-sd-id="141">+ online voliteľne</span>
+              <div class="city font-bold text-[1.05rem] flex items-center gap-2" data-sd-id="142">📍 Praha</div>
+              <div class="when text-[1.35rem] font-semibold" style="font-family: 'Fraunces', serif;" data-sd-id="143">26.–27. 10. 2026</div>
+              <div class="price font-extrabold text-[1.15rem]" style="color: var(--brand);" data-sd-id="144">9 800 Kč <small class="block text-[0.75rem] font-medium mt-1" style="color: var(--ink-soft);">11 858 Kč vrátane 21 % DPH</small></div>
+              <a id="date-btn-1" class="btn-primary text-center mt-auto" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" data-sd-id="145">Prihlásiť sa</a>
+            </div>
+            <div class="date-card flex flex-col gap-[14px] p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="146">
+              <span class="self-start text-[0.72rem] font-bold uppercase tracking-wider px-[10px] py-1 rounded-full" style="background: var(--accent-soft); color: var(--accent);" data-sd-id="147">+ online voliteľne</span>
+              <div class="city font-bold text-[1.05rem] flex items-center gap-2" data-sd-id="148">📍 Brno</div>
+              <div class="when text-[1.35rem] font-semibold" style="font-family: 'Fraunces', serif;" data-sd-id="149">23.–24. 11. 2026</div>
+              <div class="price font-extrabold text-[1.15rem]" style="color: var(--brand);" data-sd-id="150">9 800 Kč <small class="block text-[0.75rem] font-medium mt-1" style="color: var(--ink-soft);">11 858 Kč vrátane 21 % DPH</small></div>
+              <a id="date-btn-2" class="btn-primary text-center mt-auto" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" data-sd-id="151">Prihlásiť sa</a>
+            </div>
+            <div class="date-card flex flex-col gap-[14px] p-8 border rounded-2xl transition-colors hover:border-[var(--brand)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="152">
+              <span class="self-start text-[0.72rem] font-bold uppercase tracking-wider px-[10px] py-1 rounded-full" style="background: var(--accent-soft); color: var(--accent);" data-sd-id="153">+ online voliteľne</span>
+              <div class="city font-bold text-[1.05rem] flex items-center gap-2" data-sd-id="154">📍 Praha</div>
+              <div class="when text-[1.35rem] font-semibold" style="font-family: 'Fraunces', serif;" data-sd-id="155">7.–8. 12. 2026</div>
+              <div class="price font-extrabold text-[1.15rem]" style="color: var(--brand);" data-sd-id="156">9 800 Kč <small class="block text-[0.75rem] font-medium mt-1" style="color: var(--ink-soft);">11 858 Kč vrátane 21 % DPH</small></div>
+              <a id="date-btn-3" class="btn-primary text-center mt-auto" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" data-sd-id="157">Prihlásiť sa</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="py-16" data-sd-id="158">
+        <div class="max-w-[1120px] mx-auto px-6" data-sd-id="159">
+          <div class="max-w-[640px] mx-auto mb-10 text-center" data-sd-id="160">
+            <span class="eyebrow mb-[14px]" data-sd-id="161">Časté otázky</span>
+            <h2 class="text-[clamp(1.6rem,3vw,2.1rem)] mb-2" data-sd-id="162">Skôr než sa prihlásite</h2>
+          </div>
+          <div class="faq-container max-w-[820px] mx-auto grid gap-3" data-sd-id="163">
+            <details class="border p-[18px_22px] rounded-[14px] group" open="" style="background: var(--surface); border-color: var(--border);" data-sd-id="164">
+              <summary class="list-none cursor-pointer font-bold text-base flex justify-between items-center gap-4 select-none" data-sd-id="165">
+                Naozaj nemusím vedieť programovať?
+                <span class="text-[1.4rem] group-open:hidden" style="color: var(--brand);" data-sd-id="166">+</span>
+                <span class="text-[1.4rem] hidden group-open:inline" style="color: var(--brand);" data-sd-id="167">–</span>
+              </summary>
+              <p class="mt-[14px] text-[0.95rem]" style="color: var(--ink-soft);" data-sd-id="168">Nie. Celý kurz je postavený na tom, že popíšete, čo chcete, a výsledok vzniká v dialógu s AI. Žiadne programátorské znalosti nie sú potrebné.</p>
+            </details>
+            <details class="border p-[18px_22px] rounded-[14px] group" style="background: var(--surface); border-color: var(--border);" data-sd-id="169">
+              <summary class="list-none cursor-pointer font-bold text-base flex justify-between items-center gap-4 select-none" data-sd-id="170">
+                Čo si z kurzu reálne odnesiete?
+                <span class="text-[1.4rem] group-open:hidden" style="color: var(--brand);" data-sd-id="171">+</span>
+                <span class="text-[1.4rem] hidden group-open:inline" style="color: var(--brand);" data-sd-id="172">–</span>
+              </summary>
+              <p class="mt-[14px] text-[0.95rem]" style="color: var(--ink-soft);" data-sd-id="173">Konkrétne výstupy: publikovaný web, interaktívny nástroj, automatizačný skript, sadu promptov a certifikát. Nie len poznámky.</p>
+            </details>
+            <details class="border p-[18px_22px] rounded-[14px] group" style="background: var(--surface); border-color: var(--border);" data-sd-id="174">
+              <summary class="list-none cursor-pointer font-bold text-base flex justify-between items-center gap-4 select-none" data-sd-id="175">
+                Potrebujem vlastný platený účet?
+                <span class="text-[1.4rem] group-open:hidden" style="color: var(--brand);" data-sd-id="176">+</span>
+                <span class="text-[1.4rem] hidden group-open:inline" style="color: var(--brand);" data-sd-id="177">–</span>
+              </summary>
+              <p class="mt-[14px] text-[0.95rem]" style="color: var(--ink-soft);" data-sd-id="178">Nie. Na dobu výučby a týždeň po kurze vám organizátor pridelí licenciu. Ak si účet založíte vopred, ušetríte čas na začiatku.</p>
+            </details>
+            <details class="border p-[18px_22px] rounded-[14px] group" style="background: var(--surface); border-color: var(--border);" data-sd-id="179">
+              <summary class="list-none cursor-pointer font-bold text-base flex justify-between items-center gap-4 select-none" data-sd-id="180">
+                Som vývojár a chcem ísť hlbšie. Existuje nadväzujúci kurz?
+                <span class="text-[1.4rem] group-open:hidden" style="color: var(--brand);" data-sd-id="181">+</span>
+                <span class="text-[1.4rem] hidden group-open:inline" style="color: var(--brand);" data-sd-id="182">–</span>
+              </summary>
+              <p class="mt-[14px] text-[0.95rem]" style="color: var(--ink-soft);" data-sd-id="183">Áno — Claude Code: autonómny agentný vývoj a MCP integrácie (CLPRG1), kde sa preberá CLI, CLAUDE.md, hooks, skills a MCP.</p>
+            </details>
+            <details class="border p-[18px_22px] rounded-[14px] group" style="background: var(--surface); border-color: var(--border);" data-sd-id="184">
+              <summary class="list-none cursor-pointer font-bold text-base flex justify-between items-center gap-4 select-none" data-sd-id="185">
+                Potrebujem si priniesť vlastný počítač?
+                <span class="text-[1.4rem] group-open:hidden" style="color: var(--brand);" data-sd-id="186">+</span>
+                <span class="text-[1.4rem] hidden group-open:inline" style="color: var(--brand);" data-sd-id="187">–</span>
+              </summary>
+              <p class="mt-[14px] text-[0.95rem]" style="color: var(--ink-soft);" data-sd-id="188">Nie, učebne sú kompletne vybavené výkonnými počítačmi. Pri online forme stačí váš vlastný počítač s internetom.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-6" data-sd-id="189">
+        <div class="max-w-[1120px] mx-auto" data-sd-id="190">
+          <div class="final-cta rounded-[24px] p-[52px_40px] text-center" style="background: linear-gradient(135deg, var(--brand), var(--brand-dark)); color: #fff;" data-sd-id="191">
+            <h2 class="text-[clamp(1.6rem,3vw,2.3rem)] mb-4" style="color: #fff;" data-sd-id="192">Naučte sa tvoriť s AI namiesto toho, aby ste sa naučili programovať</h2>
+            <p class="max-w-[56ch] mx-auto text-[1.05rem] mb-[26px] opacity-90" data-sd-id="193">Dvojdňové školenie s konkrétnymi výstupmi — vlastný web, appka aj automatizácia. Miesta na najbližšie termíny sa plnia priebežne.</p>
+            <a id="final-cta-btn" class="btn-primary px-[30px] shadow-none" style="background: #fff; color: var(--brand-dark);" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" data-sd-id="194">Zobraziť termíny a prihlásiť sa →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-9 border-t text-center text-[0.85rem]" style="border-color: var(--border); color: var(--ink-soft);" data-sd-id="195">
+      <div class="max-w-[1120px] mx-auto px-6" data-sd-id="196">
+        Školenie organizuje ICT Pro s.r.o. · Brno &amp; Praha · <a id="footer-email" href="mailto:skoleni@ictpro.cz" class="underline" data-sd-id="197">skoleni@ictpro.cz</a> · +420 517 546 191<br>
+        Táto stránka je neoficiálna propagačná landing page kurzu, vytvorená na základe verejne dostupných informácií z
+        <a id="footer-orig" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" class="underline" data-sd-id="198">oficiálnej stránky kurzu ICT Pro</a>.
+      </div>
+    </footer>
+
+    <div class="sticky-cta md:hidden fixed left-0 right-0 bottom-0 z-[60] p-4 border-t shadow-[0_-10px_30px_-20px_rgba(0,0,0,0.3)]" style="background: var(--surface); border-color: var(--border);" data-sd-id="199">
+      <a id="mobile-sticky-btn" class="block text-center py-[14px] rounded-[12px] font-bold text-white" style="background: var(--brand);" href="https://www.skoleni-ict.cz/kurz/Claude-AI-vibe-coding-a-tvorba-aplikaci-bez-programovani-CLVC.aspx" target="_blank" rel="noopener" data-sd-id="200">Prihlásiť sa na kurz</a>
+    </div>
+  </div>
+
+</body></html>
